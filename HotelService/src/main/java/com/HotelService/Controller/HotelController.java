@@ -21,7 +21,7 @@ public class HotelController {
     }
 
     @GetMapping("/{hotelId}")
-    public Optional<Hotel> findByHotelId(@PathVariable String hotelId){
+    public Hotel findByHotelId(@PathVariable String hotelId){
         return hotelService.getByHotelId(hotelId);
     }
 
