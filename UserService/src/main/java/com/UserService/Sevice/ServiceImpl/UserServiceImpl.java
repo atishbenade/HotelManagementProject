@@ -7,6 +7,7 @@ import com.UserService.PayLoad.HotelBYHotelId;
 import com.UserService.PayLoad.RatingForUsers;
 import com.UserService.Repository.UserRepository;
 import com.UserService.Sevice.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RatingForUsers ratingForUsers;
     @Override
+
     public List<User> getAllUSer() {
 
         List<User> users = userRepository.findAll();
@@ -49,4 +51,8 @@ public class UserServiceImpl implements UserService {
 
              return All;
     }
+
+
+    //cerating fall back method
+
 }
